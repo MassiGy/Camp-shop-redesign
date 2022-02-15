@@ -1,0 +1,23 @@
+.header {
+    @include flexbox-center-y;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 7rem;
+    background-color: lighten($mate-grey-color, 3%);
+    border-bottom: 1px lighten($color: $color-tertiary, $amount: 50%) solid;
+    &__logo {
+        cursor: pointer;
+        display: inline-block;
+        height: 6rem;
+        width: 6rem;
+    }
+    @include respond(xs) {
+        flex-wrap: wrap;
+        align-content: space-around;
+        height: 15rem;
+        &__form {
+            order: 1;
+            flex: 0 0 100%;
+        }
+    }
+}

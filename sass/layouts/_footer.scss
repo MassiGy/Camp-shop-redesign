@@ -1,0 +1,26 @@
+.footer {
+    height: 100vh;
+    background-image: $gradient-secondary;
+    color: $white-color;
+    display: flex;
+    @include flexbox-center-xy;
+    flex-direction: column;
+    &__logo {
+        width: 10%;
+        margin-bottom: 4rem;
+        @include respond(sm) {
+            width: 30%;
+        }
+    }
+    &__form {
+        height: 35%;
+        width: 25%;
+        background-color: transparent;
+        @include respond(md) {
+            width: 40%;
+        }
+        @include respond(md) {
+            width: 60%;
+        }
+    }
+}

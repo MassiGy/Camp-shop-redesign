@@ -1,0 +1,57 @@
+.popup {
+    display: flex;
+    width: 80vw;
+    height: 80vh;
+    box-shadow: $shadow-grey;
+    background-color: $white-color;
+    position: fixed;
+    left: 10%;
+    top: 10%;
+    z-index: 100;
+    overflow: hidden;
+    transition: all .4s;
+    @include respond(sm) {
+        width: 96vw;
+        left: 2%;
+    }
+    &__container {
+        flex: 0 0 50%;
+    }
+    &__form {
+        height: 35%;
+        width: 60%;
+        @include respond(md) {
+            width: 80%;
+            height: 40%;
+        }
+        @include respond(sm) {
+            width: 100%;
+        }
+    }
+    &__image {
+        flex: 0 0 50%;
+    }
+    &__closer {
+        font-size: 2rem;
+        font-weight: 400;
+        cursor: pointer;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        color: $color-tertiary;
+    }
+}
+
+#popup-login,
+#popup-logout,
+#popup-signout,
+#popup-signup,
+#popup-product,
+#popup-feedback_message {
+    visibility: hidden;
+    opacity: 0;
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+}

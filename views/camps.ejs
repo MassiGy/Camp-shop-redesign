@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head.ejs") %>
+
+
+
+<body>
+
+
+  <%- include("./partials/loginForm.ejs") %>
+  <%- include("./partials/logoutForm.ejs") %>
+  <%- include("./partials/signupForm.ejs") %>
+  <%- include("./partials/signoutForm.ejs") %>
+  <%- include("./partials/feedback_messages.ejs") %>
+
+
+
+
+  <header class="header">
+    <img src="/img/camping-tent.png" alt="" class="header__logo">
+    <form action="/camps/search" method="POST" class="header__form form form--inline ">
+      <input type="text" name="query" class=" form--inline__input" placeholder="Search">
+      <button class="btn form--inline__btn ">
+        <svg class="input__icon">
+          <use xlink:href="/img/sprite.svg#icon-magnifying-glass"></use>
+        </svg>
+      </button>
+    </form>
+    <% if (current_user) { %>
+
+    <div class="header__user-box user-box user-box--inline">
+      <span class="user-box__username"><%= current_user.username %> </span>
+      <img src="/img/campfire.jpg" alt="" class="user-box__picture">
+    </div>
+    <% } %>
+  </header>
+
+
+
+
+
+  <main class="main-block">
+
+
+
+
+
+    <nav class="main-block__nav side-bar">
+      <ul class="side-bar__list">
+        <li class="side-bar__item">
+          <svg class="side-bar__icon">
+            <use xlink:href="/img/sprite.svg#icon-home">
+            </use>
+          </svg>
+          <a href="/home" class="side-bar__link">Home</a>
+        </li>
+
+        <li class="side-bar__item">
+          <svg class="side-bar__icon">
+            <use xlink:href="/img/sprite.svg#icon-users">
+            </use>
+          </svg>
+
+          <a href="/about" class="side-bar__link">About Us</a>
+        </li>
+        <% if (!current_user) { %>
+        <li class="side-bar__item">
+          <svg class="side-bar__icon">
+            <use xlink:href="/img/sprite.svg#icon-user-check">
+            </use>
+          </svg>
+
+          <a href="#popup-login" class="side-bar__link">Login</a>
+        </li>
+        <li class="side-bar__item">
+          <svg class="side-bar__icon">
+            <use xlink:href="/img/sprite.svg#icon-user-plus">
+            </use>
+          </svg>
+
+          <a href="#popup-signup" class="side-bar__link">Signup</a>
+        </li>
+        <% }else{ %>
+        <li class="side-bar__item">
+          <svg class="side-bar__icon">
+            <use xlink:href="/img/sprite.svg#icon-exit">
+            </use>
+          </svg>
+
+          <a href="#popup-logout" class="side-bar__link">Logout</a>
+        </li>
+        <li class="side-bar__item">
+          <svg class="side-bar__icon">
+            <use xlink:href="/img/sprite.svg#icon-user-minus">
+            </use>
+          </svg>
+
+          <a href="#popup-signout" class="side-bar__link">Signout</a>
+        </li>
+        <% } %>
+
+      </ul>
+      <p class="side-bar__legal-text">
+        &copy; 2021 All Rights Reserved
+      </p>
+    </nav>
+
+
+    <% if (current_user) { %>
+
+
+    <section class="main-block__content">
+      
+      <% for(let counter = 0; counter < (data.length > 16 ? 16 : data.length); counter ++) { %>
+      <div class="card ">
+        <img src="/img/camping-vector.webp" alt="" class="card__image">
+        <div class="card__text">
+          <a href="https://www.google.com/search?query=<%= data[counter].location%>+campsites+for+<%= data[counter].price %>+usd+per+night" target="_blank" class="card__link ">
+            <%= data[counter].location %> &rarr;
+          </a>
+        </div>
+      </div>
+      <% } %>
+
+
+
+    </section>
+
+    <% }else{ %>
+    <h1>Please create an account or login to see the content</h1>
+    <% } %>
+
+  </main>
+
+
+</body>
+
+</html>

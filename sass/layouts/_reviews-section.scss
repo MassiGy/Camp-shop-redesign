@@ -1,0 +1,14 @@
+.reviews-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &__header {
+        margin-left: 2rem;
+    }
+    @include respond(md) {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}

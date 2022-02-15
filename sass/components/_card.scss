@@ -1,0 +1,72 @@
+.card {
+    height: 25rem;
+    width: 25rem;
+    background-color: $color-primary;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    &__image {
+        flex: 0 0 80%;
+    }
+    &__text {
+        flex: 0 0 20%;
+        @include flexbox-center-y;
+    }
+    &__link {
+        text-decoration: none;
+        color: $white-color;
+        padding-bottom: 3px;
+        border-bottom: 1px currentColor solid;
+        margin-left: 15px;
+        font-size: 1.4rem;
+    }
+}
+
+.product-card {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include respond(md) {
+            flex: 0 0 100%;
+        }
+    }
+    &__details {
+        display: flex;
+        flex: 0 0 70%;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    &__title {
+        padding: 3rem;
+        color: $color-primary;
+    }
+    &__list {
+        list-style: none;
+        &-icons {
+            width: 2rem;
+            height: 2rem;
+            fill: $color-primary;
+            &:last-of-type {
+                margin-right: 2rem;
+                fill: $color-secondary;
+            }
+        }
+        &-items {
+            padding: 3rem;
+            @include flexbox-center-y;
+            height: 40px;
+        }
+    }
+    &__map {
+        flex: 0 0 30%;
+        background-color: $color-primary;
+    }
+    &__image {
+        @include respond(md) {
+            width: 0;
+            height: 0;
+            display: none;
+        }
+    }
+}

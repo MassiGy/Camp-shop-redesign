@@ -1,0 +1,24 @@
+.btn {
+    font-size: inherit;
+    font-weight: 300;
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+    &-inline {
+        color: $color-secondary;
+        border-bottom: 1px solid currentColor;
+        padding-block: 3px 3px;
+        transition: all .4s;
+        &:hover {
+            transform: translateY(-3px);
+            background-color: $color-primary;
+            color: $white-color;
+            border-bottom: 1px solid $color-primary;
+            box-shadow: 0 2rem 4rem rgba($color: grey, $alpha: .4);
+        }
+        &:active {
+            transform: translateY(-1px);
+        }
+    }
+}

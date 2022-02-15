@@ -1,0 +1,31 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+    &__cta {
+        display: inline-block;
+        width: 40%;
+        height: 50%;
+        position: absolute;
+        top: 20%;
+        left: 0%;
+    }
+    &__links {
+        display: flex;
+        justify-content: space-around;
+    }
+    @include respond(sm) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5rem;
+        &__cta {
+            position: relative;
+            width: 100%;
+            padding-bottom: 6rem;
+        }
+    }
+}

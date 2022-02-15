@@ -1,0 +1,19 @@
+<div class="popup" id="popup-feedback_message">
+    <a class="popup__closer btn" href="#closer">X</a>
+    <div class="popup__container form-container">
+        <h1 class="heading-primary u-mb-md">
+            Feedback Message
+        </h1>
+        <p>
+            <% if (success_messages.length) { %>
+                <%= success_messages %> 
+                
+            <% }else{ %>
+                <%= error_messages %> 
+            <% } %>
+        </p>
+    </div>
+    <img srcset="/img/feedback-vector-small.jpg 600w, /img/feedback-vector-lar-large.jpg 1200w" sizes="(max-width:26.5625em) 48vw,(min-width:37.6em) 40vw" alt="" class="popup__image">
+ </div>
+
+

@@ -1,0 +1,32 @@
+.figure {
+    position: relative;
+    cursor: pointer;
+    @include deviceType(hover, hover) {
+        &__caption {
+            font-size: 1.4rem;
+            display: inline-block;
+            width: 0;
+            opacity: 0;
+            transition: all .3s ease-out;
+            @include position-center;
+            z-index: -10;
+        }
+        &__image:hover+&__caption {
+            display: inline-block;
+            width: 100%;
+            opacity: 1;
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+    }
+    @include deviceType(hover, none) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__caption {
+            text-align: center;
+        }
+    }
+}

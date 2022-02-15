@@ -1,0 +1,70 @@
+@mixin flexbox-center-xy {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+@mixin flexbox-center-x {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+@mixin flexbox-center-y {
+    display: flex !important;
+    align-items: center !important;
+}
+
+@mixin set-width-center($w) {
+    width: $w;
+    margin: 0 auto;
+}
+
+@mixin position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin clearFix {
+    content: "";
+    clear: both;
+}
+
+//* Media Querie Manager
+
+/*
+43.75em = 700px
+37.5em = 600px
+26.5625em = 425px
+21.875em = 350px
+*/
+
+@mixin respond($breakpoint) {
+    @if ($breakpoint==md) {
+        @media only screen and (max-width: 43.75em) {
+            @content;
+        }
+    }
+    @if ($breakpoint==tab-to-phone) {
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        }
+    }
+    @if ($breakpoint==sm) {
+        @media only screen and (max-width: 26.5625em) {
+            @content;
+        }
+    }
+    @if ($breakpoint==xs) {
+        @media only screen and (max-width: 21.875em) {
+            @content;
+        }
+    }
+}
+
+@mixin deviceType($prop, $val) {
+    @media only screen and ($prop: $val) {
+        @content;
+    }
+}

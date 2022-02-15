@@ -1,0 +1,13 @@
+.user-box {
+    cursor: pointer;
+    @include flexbox-center-xy;
+    font-family: "Dancing Script", "Lato", sans-serif;
+    font-size: 2rem;
+    color: $color-secondary;
+    &__picture {
+        display: inline-block;
+        width: 4rem;
+        border-radius: 50%;
+        margin-left: 2rem;
+    }
+}

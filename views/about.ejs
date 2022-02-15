@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+
+
+<body>
+
+    <%- include("./partials/logoutForm.ejs") %>
+    <%- include("./partials/loginForm.ejs") %>
+    <%- include("./partials/signupForm.ejs") %>
+    <%- include("./partials/signoutForm.ejs") %>
+    <%- include("./partials/navigation.ejs") %>
+    <%- include("./partials/feedback_messages.ejs") %>
+
+
+
+
+    <section class="hero-section  hero">
+        <img srcset="../img/hero-vector-image-small.png 960w, ../img/hero-vector-image-large.png 1600w" sizes="95vw" src="../img/hero-vector-image-large.png" alt="" class="hero__image ">
+        <div class="hero__cta">
+            <h1 class="heading-primary hero__header center-text">
+                Camp Shop | About Us !
+            </h1>
+        </div>
+    </section>
+
+
+
+
+    <section class="about-section">
+        <div class="feature-box">
+            <h2 class="heading-secondary feature-box__title center-text">+10 new camps everyday!</h2>
+            <p class="feature-box__text paragraph center-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a quos iste esse earum
+            </p>
+        </div>
+        <div class="feature-box">
+            <h2 class="heading-secondary feature-box__title center-text">+500 members in our community !</h2>
+            <p class="feature-box__text paragraph center-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a quos iste esse earum
+            </p>
+        </div>
+        <div class="feature-box">
+            <h2 class="heading-secondary feature-box__title center-text">+4K users around the U.S!</h2>
+            <p class="feature-box__text paragraph center-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a quos iste esse earum
+            </p>
+        </div>
+    </section>
+
+
+
+
+    <section class="reviews-section">
+        <div class="reviews-section__header">
+
+            <h1 class="heading-primary ">
+                Overview of Our activities
+            </h1>
+        </div>
+        <div class="gallery__container">
+            <div class="reviews-section__gallery gallery-inline">
+                <figure class="reviews-section__fig gallery__fig figure">
+                    <img src="/img/fishing.jpeg" class="reviews-section__image gallery__image figure__image" alt="">
+                </figure>
+
+                <figure class="reviews-section__fig gallery__fig figure">
+                    <img src="/img/motocross.jpeg" class="reviews-section__image gallery__image figure__image" alt="">
+                </figure>
+            </div>
+            <div class="reviews-section__gallery gallery-inline">
+                <figure class="reviews-section__fig gallery__fig figure">
+                    <img src="/img/climbing.jpeg" class="reviews-section__image gallery__image figure__image" alt="">
+                </figure>
+
+                <figure class="reviews-section__fig gallery__fig figure">
+                    <img src="/img/overall-activities.jpeg" class="reviews-section__image gallery__image figure__image" alt="">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <img src="/img/camping-tent.png" alt="" class="footer__logo">
+        <%- include("./partials/contactForm.ejs") %>
+
+    </footer>
+    
+
+
+</body>
+
+</html>

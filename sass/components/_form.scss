@@ -1,0 +1,103 @@
+.form {
+    display: flex;
+    &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include respond(sm) {
+            padding-left: 2rem;
+        }
+    }
+    &--block {
+        flex-direction: column;
+        justify-content: space-around;
+        &__input {
+            height: 40px;
+            border-radius: 20px;
+            padding-left: 2rem;
+            border: none;
+            background-color: $mate-grey-color;
+            &::placeholder {
+                font-size: 1.4rem;
+            }
+            &,
+            &:focus {
+                outline: none;
+            }
+        }
+        &__btn {
+            &,
+            &:focus,
+            &:active {
+                outline: none;
+                border: none;
+                border-radius: 20px;
+                height: 40px;
+                background-color: darken($color: $color-primary, $amount: 15%);
+                color: $white-color;
+                cursor: pointer;
+            }
+        }
+        &__message{
+            height: 80px;
+            max-width: 100%;
+            max-height: 80px;
+            border-radius: 20px;
+            padding-left: 2rem;
+            padding-right: 1rem;
+            border: none;
+            background-color: $mate-grey-color;
+            &::placeholder {
+                font-size: 1.4rem;
+            }
+        }
+    }
+    &--inline {
+        justify-content: center;
+        width: 30%;
+        transition: all .4s;
+        &:focus-within {
+            width: 40%;
+        }
+        @include respond(md) {
+            width: 40%;
+            &:focus-within {
+                width: 50%;
+            }
+        }
+        @include respond(sm) {
+            width: 45%;
+            &:focus-within {
+                width: 55%;
+            }
+        }
+        &__input,
+        &__btn {
+            height: 35px;
+            border-radius: 20px;
+            padding-left: 2rem;
+            border: none;
+            background-color: $mate-grey-color;
+            &::placeholder {
+                font-size: 1.4rem;
+            }
+            &,
+            &:focus {
+                outline: none;
+            }
+        }
+        &__btn {
+            @include flexbox-center-xy;
+            margin-left: -6rem;
+        }
+        &__input {
+            flex: 0 0 80%;
+        }
+    }
+}
+
+.input__icon {
+    width: 20px;
+    height: 20px;
+}

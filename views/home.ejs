@@ -1,0 +1,103 @@
+<html lang="en">
+
+    <%- include("./partials/head.ejs") %>
+
+<body>
+
+    <%- include("./partials/logoutForm.ejs") %>
+    <%- include("./partials/loginForm.ejs") %>
+    <%- include("./partials/signupForm.ejs") %>
+    <%- include("./partials/signoutForm.ejs") %>
+    <%- include("./partials/navigation.ejs") %>
+    <%- include("./partials/feedback_messages.ejs") %>
+
+
+  
+    <section class="hero-section  hero">
+        <img srcset="../img/hero-vector-image-small.png 960w, ../img/hero-vector-image-large.png 1600w" sizes="95vw" src="../img/hero-vector-image-large.png" alt="" class="hero__image ">
+        <div class="hero__cta">
+            <h1 class="heading-primary hero__header center-text">
+                Camp Shop | Your Shoping App for Camps
+            </h1>
+            <div class="hero__links u-mt-md">
+                <a href="#popup-signup" class="hero__link btn btn-inline">Sign Up &rarr;</a>
+                <a href="/camps" class="hero__link btn btn-inline">All Camps &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="about-section">
+        <div class="feature-box">
+            <h2 class="heading-secondary feature-box__title center-text">+20 stats around the U.S.A !</h2>
+            <p class="feature-box__text paragraph center-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a quos iste esse earum
+            </p>
+        </div>
+        <div class="feature-box">
+            <h2 class="heading-secondary feature-box__title center-text">+100 camps waiting for you !</h2>
+            <p class="feature-box__text paragraph center-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a quos iste esse earum
+            </p>
+        </div>
+        <div class="feature-box">
+            <h2 class="heading-secondary feature-box__title center-text">+600 adventurers signed in !</h2>
+            <p class="feature-box__text paragraph center-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a quos iste esse earum
+            </p>
+        </div>
+    </section>
+
+
+
+    <section class="reviews-section">
+        <div class="reviews-section__header">
+
+            <h1 class="heading-primary ">
+                Overview of Our reviews
+            </h1>
+            <small class="small-text--hovering">- just hover the images -</small>
+        </div>
+        <div class="reviews-section__gallery gallery-inline">
+
+            <figure class="reviews-section__fig gallery__fig figure">
+                <img src="/img//user-1.jpg" class="reviews-section__image gallery__image figure__image" alt="">
+                <figcaption class="figure__caption">
+                    Awesome!
+                </figcaption>
+            </figure>
+
+            <figure class="reviews-section__fig gallery__fig figure">
+                <img src="/img//user-2.jpg" class="reviews-section__image gallery__image figure__image" alt="">
+                <figcaption class="figure__caption">
+                    Great!
+                </figcaption>
+            </figure>
+            <figure class="reviews-section__fig gallery__fig figure">
+                <img src="/img//user-3.jpg" class="reviews-section__image gallery__image figure__image" alt="">
+                <figcaption class="figure__caption">
+                    Looking For another tour!!
+                </figcaption>
+            </figure>
+
+        </div>
+    </section>
+
+
+
+
+  
+    <footer class="footer">
+        <img src="/img/camping-tent.png" alt="" class="footer__logo">
+        <%- include("./partials/contactForm.ejs") %>
+
+    </footer>
+    
+
+
+
+</body>
+
+</html>

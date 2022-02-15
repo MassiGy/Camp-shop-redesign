@@ -1,0 +1,35 @@
+.main-block {
+    display: flex;
+    &__nav {
+        flex: 0 0 16%;
+    }
+    &__content {
+        display: flex;
+        flex: 0 0 84%;
+        padding: 3rem;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        &>* {
+            margin-bottom: 4rem;
+        }
+    }
+    @include respond(md) {
+        &__nav {
+            flex: 0 0 18%;
+        }
+        &__content {
+            flex: 0 0 82%;
+        }
+    }
+    @include respond(tab-to-phone) {
+        &__nav {
+            flex: 0 0 24%;
+        }
+        &__content {
+            flex: 0 0 76%;
+        }
+    }
+    @include respond(sm) {
+        flex-direction: column;
+    }
+}

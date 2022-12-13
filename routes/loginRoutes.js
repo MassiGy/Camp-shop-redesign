@@ -8,15 +8,15 @@ const passport = require("passport");
 router.post('/', passport.authenticate(
     // first we need to specify the strategy
     // strategy === local, means that we are using our db 
-    "local",                                             
+    "local",
     // second, set up some params.
     // failureFlash message is equal by default to : Username or password incorrect.
     // then set up the rederection.   
     {
-        failureFlash: true,
-        successFlash: "Welcome Back!",
-        successRedirect: "/camps#popup-feedback_message",
-        failureRedirect: "/home#popup-feedback_message"
+        failureFlash: "Error on login, please try again !",
+        failureRedirect: "/home#popup-feedback_message",
+        successRedirect: "/camps",
+        
     }));
 
 module.exports = router

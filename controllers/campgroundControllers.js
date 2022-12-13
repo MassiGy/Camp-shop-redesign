@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 
 module.exports.renderAllCamps = async(req, res) => {
     try{
-        const response = await fetch("https://camp-shop.herokuapp.com/campgrounds/get_json");
+        const response = await fetch("https://camp-shop.up.railway.app/campgrounds/get_json");
         const data = await response.json();
         res.render("camps", {data});
 
@@ -21,7 +21,7 @@ module.exports.search = async(req,res) => {
 
     const {query} = req.body;
     try{
-        const response = await fetch(`https://camp-shop.herokuapp.com/campgrounds/search/${query}`);
+        const response = await fetch(`https://camp-shop.up.railway.app/campgrounds/search/${query}`);
         const data = await response.json();
         res.status(200).render("camps", {data});
 

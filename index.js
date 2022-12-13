@@ -1,7 +1,6 @@
 "use strict";
-if(process.env.NODE_ENV != "production"){
-    require("dotenv").config();
-}
+
+require("dotenv").config();
 
 
 const express = require('express');
@@ -21,6 +20,9 @@ const User = require("./modals/User");
 const port = process.env.PORT || 3000;
 const sessionName = process.env.session_name || 'u.controllers'
 const sessionSecret = process.env.session_secret || 'u.controllers.token'
+const db_url = String(process.env.mongodb_url) || 'mongodb://localhost:27017/camp-shop'
+
+
 
 const sessionConfig = {
     secret: sessionSecret,
@@ -28,16 +30,20 @@ const sessionConfig = {
     resave: false,
     saveUninitialized: false,
     cookie: {
-        secure: true,
         httpOnly: true,
         sameSite: true,
-        expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+        expires: 7 * 24 * 60 * 60 * 1000,
     }
 }
 
 
-async function main(){
-   await mongoose.connect('mongodb://localhost:27017/camp-shop');
+
+
+
+async function main() {
+
+    await mongoose.set('strictQuery', true);
+    await mongoose.connect(db_url);
 }
 main().catch(err => console.log(err));
 
@@ -78,7 +84,7 @@ const generalRoutes = require("./routes/generalRoutes");
 app.use((req, res, next) => {
     // flash messages
     res.locals.success_messages = req.flash("success");
-    res.locals.error_messages = req.flash("error") ;
+    res.locals.error_messages = req.flash("error");
 
     // store a refrence to the current logged in user
     // in order to dynamicly build the view (link in navigation for exemple)

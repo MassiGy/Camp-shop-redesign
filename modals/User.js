@@ -1,7 +1,6 @@
 "use strict";
 const mongoose= require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
-const { UserExistsError } = require("passport-local-mongoose/lib/errors");
 
 const userSchema = new mongoose.Schema({
     username : String,

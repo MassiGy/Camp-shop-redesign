@@ -31,7 +31,7 @@ module.exports.sendEmail = (req, res) => {
             }
           ],
           "Subject": "Camp-shop-redesign contact form",
-          "HTMLPart": `<h3>Email from ${req.body.name} with the address of ${req.body.email}</h3>
+          "HTMLPart": `<h3>Email from ${req.body.username} with the address of ${req.body.email}</h3>
       <br>
       <p>Message :
          <br> ${req.body.message} 

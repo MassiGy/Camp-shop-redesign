@@ -1,6 +1,8 @@
 "use strict";
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
 
-require("dotenv").config();
 
 
 const express = require('express');
@@ -30,8 +32,8 @@ const sessionConfig = {
     resave: false,
     saveUninitialized: false,
     cookie: {
-        httpOnly: true,
-        sameSite: true,
+        httpOnly: process.env.NODE_ENV == 'production',
+        secure: process.env.NODE_ENV == 'production',
         expires: 7 * 24 * 60 * 60 * 1000,
     }
 }
@@ -41,8 +43,7 @@ const sessionConfig = {
 
 
 async function main() {
-
-    await mongoose.set('strictQuery', true);
+    mongoose.set('strictQuery', true);
     await mongoose.connect(db_url);
 }
 main().catch(err => console.log(err));

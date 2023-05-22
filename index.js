@@ -10,6 +10,7 @@ const app = express();
 const path = require('path');
 const ejs_mate = require('ejs-mate');
 const mongoose = require("mongoose");
+const MongoStore = require("connect-mongo")
 const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -20,8 +21,8 @@ const User = require("./modals/User");
 
 
 const port = process.env.PORT || 3000;
-const sessionName = process.env.session_name || 'u.controllers'
-const sessionSecret = process.env.session_secret || 'u.controllers.token'
+const sessionName = String(process.env.session_name) || 'u.controllers'
+const sessionSecret = String(process.env.session_secret) || 'u.controllers.token'
 const db_url = String(process.env.mongodb_url) || 'mongodb://localhost:27017/camp-shop'
 
 
@@ -34,8 +35,12 @@ const sessionConfig = {
     cookie: {
         httpOnly: process.env.NODE_ENV == 'production',
         secure: process.env.NODE_ENV == 'production',
-        expires: 7 * 24 * 60 * 60 * 1000,
-    }
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+    },
+    store: MongoStore.create({
+        mongoUrl: db_url,
+        touchAfter: 7 * 24 * 60 * 60,       // set the touchAfter = to cookies max age
+    })
 }
 
 

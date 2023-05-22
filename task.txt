@@ -1,0 +1,2 @@
+Setup a mongo store for the sessions (done)
+Make the home page nicer
